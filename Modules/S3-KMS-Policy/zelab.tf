@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "my-bucket" {
   acl    = "private"
 
   tags = {
-    Name = "CN23 Bucket"
+    Name = "cN23 Bucket"
   }
 
 #### Prevent from Accidentally deletion

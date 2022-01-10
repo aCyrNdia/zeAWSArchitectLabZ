@@ -86,7 +86,7 @@ resource "aws_route_table_association" "to-pub02" {
 }
 
 ##----------------------------------------- Security Groups
-#### Allow HTTPS
+#### Allow HTTPS from Internet
 resource "aws_security_group" "pubnet-tls" {
   name        = "HTTPS"
   description = "Allow HTTPS inbound traffic"
@@ -113,7 +113,7 @@ resource "aws_security_group" "pubnet-tls" {
   }
 }
 
-#### Allow from Public
+#### Allow traffic from Public
 resource "aws_security_group" "privnet-sql" {
   name        = "MySQL"
   description = "Allow SQL inbound traffic"

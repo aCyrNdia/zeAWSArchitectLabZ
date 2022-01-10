@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "my-bucket" {
 }
 
 
-##-----------------------------------------Configuration Recorder - The only one space where all our roles are defined
+##-----------------------------------------Configuration Recorder - The space where all our roles are defined
 ###
 resource "aws_config_configuration_recorder" "ze-recorder" {
   name     = "ConfigSpace"
@@ -39,10 +39,10 @@ resource "aws_config_remediation_configuration" "self-remediation" {
   target_id        = "AWS-EnableS3BucketEncryption"
   target_version   = "1"
 
-#### Parameters
+#### Parameters>
   parameter {
     name         = "AutomationAssumeRole"
-    static_value = "arn:aws:iam::605705171400:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+    # static_value = <<POLICY
   }
   parameter {
     name           = "BucketName"
@@ -52,7 +52,7 @@ resource "aws_config_remediation_configuration" "self-remediation" {
     name         = "SSEAlgorithm"
     static_value = "AES256"
   }
-#### /Parameters
+#### </Parameters
 
   automatic                  = true
   maximum_automatic_attempts = 10
@@ -88,3 +88,4 @@ resource "aws_iam_role" "config-recorder-role" {
 }
 POLICY
 }
+

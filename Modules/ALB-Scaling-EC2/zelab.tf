@@ -6,7 +6,7 @@ resource "aws_autoscaling_group" "my-auto-scaling" {
   desired_capacity   = 4
   max_size           = 6
   min_size           = 2
-  # target_group_arns
+  # target_group_arns =
 
   launch_template {
     id      = aws_launch_template.my-template.id
