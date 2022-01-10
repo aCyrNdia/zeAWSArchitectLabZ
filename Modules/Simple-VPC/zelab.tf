@@ -101,9 +101,9 @@ resource "aws_security_group" "pubnet-tls" {
   }
 
   egress {
-    description      = "TLS from VPC"
-    from_port        = 443
-    to_port          = 443
+    description      = "TLS back to VPC"
+    from_port        = 1024
+    to_port          = 65535
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
@@ -120,17 +120,17 @@ resource "aws_security_group" "privnet-sql" {
   vpc_id      = aws_vpc.my-vpc.id
 
   ingress {
-    description      = "SQL from Public"
-    from_port        = 3306
-    to_port          = 3306
+    description      = "All from Public"
+    from_port        = 0
+    to_port          = 0
     protocol         = "tcp"
     security_groups  = [aws_security_group.pubnet-tls.id]
   }
 
   egress {
-    description      = "TLS from VPC"
-    from_port        = 3306
-    to_port          = 3306
+    description      = "All to Public"
+    from_port        = 0
+    to_port          = 0
     protocol         = "tcp"
     security_groups  = [aws_security_group.pubnet-tls.id]
   }
