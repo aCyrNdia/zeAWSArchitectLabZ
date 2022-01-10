@@ -1,3 +1,3 @@
 module "infra" {
-  source = "./Modules/Simple-VPC"
+  source = "./Modules/Config-S3"
 }
