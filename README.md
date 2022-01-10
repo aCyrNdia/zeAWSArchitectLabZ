@@ -1,1 +1,58 @@
-# zeAWSArchitectLabZ
+# zeAWSArchitect
+... so I am Cyrille N'Dia, an AWS Cloud Architect and DevOps Engineer.
+I've done this (little) Git Repo to expose what I've learn when preparing for my AWS certification exam... and after with my researches and LabZ.
+
+Hope YOU will enoy what you'll see.
+
+---
+## Lab01 - AWS Config with S3
+#### 1. We launch a S3 bucket - This one is for testing our rule
+  - Here we choosed to launch a bucket, but we could have launched any AWS service
+
+#### 2. AWS Config Recorder
+  - To launch or create a config rule, we need a space where to declare the rules
+  - This space is called Recorder and we can only have ONE recorder by region
+  - We then launch a recorder
+
+#### 3. AWS Config rules
+  - We write rule based on vulnerability we need to correct
+  - A single rule can only match a single vulnerability
+
+#### 4. Remediation process
+  - The remediation process is used and launched everytime the rule match a vulnerability
+
+---
+## Lab02 - AutoScaling of instances behind a LoadBalancer
+### I. The Application Load Balancer
+#### 1. Target Group
+  - A target group is a group of instance that an ELB use to balance loads
+  - All ELB configuration require a target group
+  - We then create a target group of instances
+
+#### 2. Instance Type Template
+  - A target group must contain instances
+  - So we create instances that we want our target to use for load balancing
+
+#### 3. Instance match Target
+  - We attach our instances to the target group
+  - We use only one attachment for only one instance
+  - So based on the number of instances we need, we used the same number of attachements
+
+#### 4. Application Load Balancer
+  - After all, we then create our ALB
+  - We match the ALB with the target group that we created
+
+### II. The Auto Scaling Group
+
+#### 5. Launch Template / Lauch Configuration
+  - A Launch Template/Configuration is a model of instance we want to be created by our scaling activities
+  - We require a template for a scaling group to be set
+
+#### 6. Auto Scaling Group
+  - We configure our auto scaling group based on the launch template/configuration
+  - The auto scaling group will be prompted whenever a threshold is matched
+  - We can auto scale based on different threshold
+
+#### 7. Auto Scaling Attachement
+  - After configuring the auto scaling group, we then attach it to an ELB
+  - The link is made on the target group
