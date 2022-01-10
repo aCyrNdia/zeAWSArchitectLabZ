@@ -56,3 +56,11 @@ Hope YOU will enjoy what you'll see.
 #### 7. Auto Scaling Attachement
 - After configuring the auto scaling group, we then attach it to an ELB
 - The link is made on the target group
+
+---
+## Lab03 - Simple VPC to launch our resources
+#### 1. Create an empty VPC
+#### 2. The Internet Gateway
+#### 3. The subnets and their CIDR
+#### 4. Route to the Internet
+#### 5. Security Groups
