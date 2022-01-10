@@ -1,9 +1,9 @@
 variable "access-key-id" {
   type = string
-  default = "AKIAT75JXQWYDFDS6FNT"
+  default = "AKIAUMFA7UMTTXENG25K"
 }
 
 variable "secret-key" {
   type    = string
-  default = "Dwb1dCdUFgOFku/AXX7fTGX9d1d1FOrtVL9E0YzK"
+  default = "bu8SI6ldD+die1szHBK172S1yOBFF0eGikMZ59Z2"
 }
