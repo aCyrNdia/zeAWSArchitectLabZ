@@ -1,3 +1,10 @@
+#----------------------------------------- Configure KMS encryption
+###
+resource "aws_kms_key" "mykey" {
+  description             = "This key is used to encrypt bucket objects"
+  deletion_window_in_days = 30
+}
+
 #----------------------------------------- Configure an S3 Bucket
 ###
 resource "aws_s3_bucket" "my-bucket" {
@@ -38,7 +45,14 @@ resource "aws_s3_bucket" "my-bucket" {
       days = 365
     }
   }
-}
 
-#----------------------------------------- Configure KMS encryption
-###
+#### Enable SSE-KMS encryption - AWS Managed Key
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        kms_master_key_id = aws_kms_key.mykey.arn
+        sse_algorithm     = "AES256"
+      }
+    }
+  }
+}
