@@ -5,7 +5,7 @@ I've done this (little) Git Repo to expose what I've learnt when preparing for m
 Hope YOU will enjoy what you'll see.
 
 ---
-## Lab01 - AWS Config with S3
+## Lab01 - AWS Config for S3
 #### 1. We launch an S3 bucket - This one is for testing our rule.
 - Here we've chosen to launch a bucket, but we could have launched any AWS service
 
