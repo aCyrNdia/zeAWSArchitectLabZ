@@ -1,7 +1,10 @@
 # AWS Architect LabZ
-... so I am Cyrille N'Dia, certified AWS Solution Architect and Terraform Associate.
-I've done this (little) Git Repo to expose what I've learnt when preparing for my AWS certification exam... and after with my researches and LabZ.
-Through these LabZ, I use all the tools that I've learnt... I'll do my best to explain the architectures for what I plan to deploy. And the next step would be to write Terraform Codes based on these architectures.
+... so I am Cyrille N'Dia, certified **AWS Solution Architect** and **Terraform Associate**.
+I'm an IT engineer by training, from INPHB school in Côte d'Ivoire.
+
+I've made this Repo (and also the one at https://github.com/aCyrNdia/zeCloudFormationLabZ specially with CloudFormation) to expose what I've learnt when preparing for my AWS certification exam... and after with my researches and LabZ.
+Through these LabZ, I'll do my best to explain AWS architectures of what I plan to deploy and the steps to go from scratch.
+Due to the embedded characteristic of Terraform (IaC Tool), I've used it to write code than contains all services that have been used by these Labs.
 
 Hope YOU will enjoy what you'll see.
 
