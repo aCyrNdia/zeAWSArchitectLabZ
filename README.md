@@ -1,6 +1,7 @@
 # AWS Architect LabZ
-... so I am Cyrille N'Dia, an AWS Cloud Architect and DevOps Engineer.
+... so I am Cyrille N'Dia, certified AWS Solution Architect and Terraform Associate.
 I've done this (little) Git Repo to expose what I've learnt when preparing for my AWS certification exam... and after with my researches and LabZ.
+Through these LabZ, I use all the tools that I've learnt... I'll do my best to explain the architectures for what I plan to deploy. And the next step would be to write Terraform Codes based on these architectures.
 
 Hope YOU will enjoy what you'll see.
 
