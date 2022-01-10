@@ -65,3 +65,8 @@ Hope YOU will enjoy what you'll see.
 #### 3. The subnets and their CIDR
 #### 4. Route to the Internet
 #### 5. Security Groups
+
+---
+## Lab04 - S3 Bucket with Policy and SSE-KMS encryption
+#### 1. Create SSE-KMS key
+#### 2. Create The bucket
