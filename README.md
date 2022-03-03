@@ -73,3 +73,33 @@ Hope YOU will enjoy what you'll see.
 ## Lab04 - S3 Bucket with Policy and SSE-KMS encryption
 #### 1. Create SSE-KMS key
 #### 2. Create The bucket
+
+---
+## Lab05 - AutoScale an App Template in a LB Target Group
+#### 1. Create the Network components
+- Create the VPC and the Gateways (Internet and/or NAT)
+- Create the Subnets
+- Add Route Tables
+- Attach Route Tables to the Subnets
+#### 2. Add Security Layers
+- Create Security Groups
+- Create the Network ACL (for ephemeral ports)
+#### 3. Create the FileSystem
+- Create the EFS file system
+- Create the Mount Target
+- Create a Mounting Point to connect the Instances
+#### 4. Define the NodeTemplate and mount EFS
+- Create a Node Template with basc characteristic
+- Mount the EFS to the Node
+#### 5. Create the Target Group
+- The Target Group is the matching point between the ASG and the ALB
+- The ALB balances loads to the Target Group via a Listener
+- The ASG launch scaling to the Target Group
+#### 6. Configure the ASG to launch in the TG
+- Create the Launch Template based on the NodeTemplate's AMI
+- Define the AutoScaling Group to use this launch template
+#### 7. Deploy the ALB with a Listener
+- Configure the LoadBalancer
+- Create the Listener
+- Attach the Listener to the ALB
+- Define the default action the forward to the Target Group
