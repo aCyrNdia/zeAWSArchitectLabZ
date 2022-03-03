@@ -213,7 +213,7 @@ resource "aws_key_pair" "chachakey" {
 ###
 ##---------------------------------------------------Template with EFS and Apps
 resource "aws_instance" "template" {
-  ami           = "ami-048ff3da02834afdc"
+  ami           = var.ami-id
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.pub-net01.id
   key_name      = aws_key_pair.chachakey.key_name
@@ -226,7 +226,7 @@ resource "aws_instance" "template" {
 ##---------------------------------------------------Bastion
 resource "aws_instance" "bastion" {
   subnet_id     = aws_subnet.pub-net02.id
-  ami           = "ami-048ff3da02834afdc"
+  ami           = var.ami-id
   instance_type = "t2.micro"
   security_groups = [aws_security_group.fromBastion.id]
   key_name      = aws_key_pair.chachakey.key_name
@@ -254,9 +254,19 @@ resource "aws_lb_target_group" "my-target-group" {
 resource "aws_launch_template" "my-template" {
   name_prefix   = "LaunchTemplate"
 #########Image from EC2
-  image_id      = "ami-048ff3da02834afdc"
+  image_id      = var.ami-id
   instance_type = "t2.micro"
   #subnet_id     =
+
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name = "test"
+    }
+  }
+  vpc_security_group_ids = [aws_security_group.instance.id]
+  #user_data = filebase64("${path.module}/example.sh")
 }
 
 ##---------------------------------------------------AutoScaling Group
